@@ -46,7 +46,6 @@ void loop()
   Pgtop pgtop = Pgtop(_gps);
   if (pgtop.parse())
   {
-
     Serial.println("1) Antenna Status ($PGTOP)");
     Serial.println("======================================================");
     Serial.print("Command ID: "); Serial.println(pgtop.commandId);
