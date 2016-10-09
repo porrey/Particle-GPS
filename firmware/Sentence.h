@@ -2,8 +2,8 @@
 #define _SENTENCE_H
 
 #include "application.h"
-#include "Nmea.h"
-#include "NmeaCache.h"
+#include "Particle.GPS/Nmea.h"
+#include "Particle.GPS/NmeaCache.h"
 
 /*
 

@@ -3,8 +3,8 @@
 
 #include "application.h"
 #include "spark_wiring_usartserial.h"
-#include "Pmtk.h"
-#include "NmeaCache.h"
+#include "Particle.GPS/Pmtk.h"
+#include "Particle.GPS/NmeaCache.h"
 
 #define BUFFER_SIZE 128
 

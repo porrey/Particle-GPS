@@ -2,7 +2,7 @@
 #define _NMEA_H
 
 #include "application.h"
-#include "NmeaCache.h"
+#include "Particle.GPS/NmeaCache.h"
 
 class Nmea
 {
