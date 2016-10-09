@@ -1,8 +1,4 @@
-#include "Particle.GPS.h"
-#include "Nmea.h"
-#include "Pmtk.h"
-#include "Sentence.h"
-#include "NmeaCache.h"
+#include "Particle.GPS/Particle.GPS.h"
 
 // ***
 // *** Create a Gps instance. The RX an TX pins are connected to
@@ -44,21 +40,6 @@ void onSerialData()
 
 void loop()
 {
-  /*
-    // ***
-    // *** This will display the strings received from
-    // *** the GPS unit. Some may be empty if the GPS
-    // *** is not set to send all data.
-    // ***
-    Serial.print("Data[0] = "); Serial.println(_gps.data[0]);
-    Serial.print("Data[1] = "); Serial.println(_gps.data[1]);
-    Serial.print("Data[2] = "); Serial.println(_gps.data[2]);
-    Serial.print("Data[3] = "); Serial.println(_gps.data[3]);
-    Serial.print("Data[4] = "); Serial.println(_gps.data[4]);
-    Serial.print("Data[5] = "); Serial.println(_gps.data[5]);
-    Serial.print("Data[6] = "); Serial.println(_gps.data[6]);
-  */
-
   // ***
   // *** Get the Antenna Status ($PGTOP).
   // ***
