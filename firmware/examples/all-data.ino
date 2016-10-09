@@ -14,26 +14,26 @@ Timer _timer = Timer(1, onSerialData);
 
 void setup() 
 {
-    // ***
-    // *** Initialize the USB Serial for debugging.
-    // ***
-    Serial.begin(9600);
-    Serial.println("Initializing...");
+	// ***
+	// *** Initialize the USB Serial for debugging.
+	// ***
+	Serial.begin(9600);
+	Serial.println("Initializing...");
 
-    // ***
-    // *** Initialize the GPS.
-    // ***
-    _gps.begin(9600);
-	
+	// ***
+	// *** Initialize the GPS.
+	// ***
+	_gps.begin(9600);
+
 	// ***
 	// *** Requst that all data be sent.
 	// ***
-    _gps.sendCommand(PMTK_SET_NMEA_OUTPUT_ALLDATA);
-    
-    // ***
-    // *** Start the timer.
-    // ***
-    _timer.start();
+	_gps.sendCommand(PMTK_SET_NMEA_OUTPUT_ALLDATA);
+
+	// ***
+	// *** Start the timer.
+	// ***
+	_timer.start();
 }
 
 void onSerialData()
