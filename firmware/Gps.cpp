@@ -23,7 +23,7 @@ Gps::Gps(USARTSerial* serial)
     this->_serial = serial;
 };
 
-void Gps::begin(uint32_t  baud)
+void Gps::begin(uint32_t baud)
 {
     // ***
     // *** Initialize the serial port.
