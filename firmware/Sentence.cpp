@@ -158,7 +158,7 @@ bool Rmc::parse()
         // ***
         // *** Get the next field value (Status).
         // ***
-        index = this->getNextString(index, 9,  &this->status);
+        index = this->getNextString(index, 1,  &this->status);
 
         // ***
         // *** Get the next field value (Latitude).
