@@ -1,6 +1,6 @@
 # Particle.GPS
 
-GPS library for the Particle Electron and Photon. Current version is **v1.0.0**
+GPS library for the Particle Electron and Photon. Current version is **v1.0.2**
 
 ##About
 Instead of porting libraries written for other platforms, I wrote this library from scratch using the Particle firmware. This library allows you to easily add additional sentences or support to any serial based GPS.
@@ -29,7 +29,7 @@ In the setup() method, call the begin method on the **Gps** object.
 
     _gps.begin(9600);
 
-Also call the start) method of the timer.
+Also call the start() method of the timer.
 
     _timer.start();
 
