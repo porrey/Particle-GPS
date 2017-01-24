@@ -1,3 +1,4 @@
+// Copyright © 2016-2017 Daniel Porrey. All Rights Reserved.
 //
 // This file is part of the Particle.GPS library.
 // 
