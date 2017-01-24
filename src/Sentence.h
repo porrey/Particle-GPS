@@ -1,4 +1,3 @@
-// Copyright © 2016 Daniel Porrey. All Rights Reserved.
 //
 // This file is part of the Particle.GPS library.
 // 
@@ -20,8 +19,8 @@
 #define _SENTENCE_H
 
 #include "application.h"
-#include "Particle.GPS/Nmea.h"
-#include "Particle.GPS/NmeaCache.h"
+#include "Nmea.h"
+#include "NmeaCache.h"
 
 /*
 

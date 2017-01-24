@@ -1,8 +1,0 @@
-{
-  "name": "Particle.GPS",
-  "author": "Daniel Porrey <Daniel.Porrey@hotmail.com>",
-  "license": "GNU",
-  "version": "1.0.2",
-  "description": "A library to commincate with serial GPS devices on the Particle Electron and Photon."
-}
-

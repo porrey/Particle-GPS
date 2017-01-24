@@ -1,4 +1,4 @@
-// Copyright © 2016 Daniel Porrey. All Rights Reserved.
+// Copyright © 2016-2017 Daniel Porrey. All Rights Reserved.
 //
 // This file is part of the Particle.GPS library.
 // 
@@ -16,13 +16,25 @@
 // along with Particle.GPS library. If not, 
 // see http://www.gnu.org/licenses/.
 //
-#include "Particle.GPS/Particle.GPS.h"
+#include "Particle-GPS.h"
+
+// ***
+// *** Include the appropriated serial
+// *** file for ports 2, 4 and 5.
+// ***
+#include "Serial2/Serial2.h"
+#include "Serial4/Serial4.h"
+#include "Serial5/Serial5.h"
 
 // ***
 // *** Create a Gps instance. The RX an TX pins are connected to
-// *** the TX and RX pins on the electron (Serial1).
+// *** the TX and RX pins on the device. Uncomment the correct
+// *** the line below to match your wiring.
 // ***
-Gps _gps = Gps(&Serial1);
+Gps _gps = Gps(&Serial1);	// TX and RX pins on the Photon and Electron.
+//Gps _gps = Gps(&Serial2);	// RGB Green (TX) and Blue (RX) LED pins on the Photon and Electron.
+//Gps _gps = Gps(&Serial4);	// C3(TX) and C2(RX) pins on the Electron.
+//Gps _gps = Gps(&Serial5);	// C1(TX) and C0(RX) pins on the Electron.
 
 // ***
 // *** Create a timer that fires every 1 ms to capture
@@ -35,7 +47,7 @@ void setup()
   // ***
   // *** Initialize the USB Serial for debugging.
   // ***
-  Serial.begin(9600);
+  Serial.begin();
   Serial.println("Initializing...");
 
   // ***
@@ -44,7 +56,7 @@ void setup()
   _gps.begin(9600);
 
   // ***
-  // *** Requst that all data be sent.
+  // *** Request that all data be sent.
   // ***
   _gps.sendCommand(PMTK_SET_NMEA_OUTPUT_ALLDATA);
 

@@ -1,4 +1,4 @@
-// Copyright © 2016 Daniel Porrey. All Rights Reserved.
+// Copyright © 2016-2017 Daniel Porrey. All Rights Reserved.
 //
 // This file is part of the Particle.GPS library.
 // 
@@ -16,35 +16,33 @@
 // along with Particle.GPS library. If not, 
 // see http://www.gnu.org/licenses/.
 //
-#ifndef _NMEA_CACHE_H
-#define _NMEA_CACHE_H
+#ifndef _NMEA_H
+#define _NMEA_H
 
 #include "application.h"
+#include "NmeaCache.h"
 
-#define NMEA_INDEX_GGA      1
-#define NMEA_INDEX_GSA      2
-#define NMEA_INDEX_GSV      3
-#define NMEA_INDEX_RMC      4
-#define NMEA_INDEX_VTG      5
-#define NMEA_INDEX_PGT      6
-
-#define NMEA_MSGID_GGA      "$GPGGA"
-#define NMEA_MSGID_GSA      "$GPGSA"
-#define NMEA_MSGID_GSV      "$GPGSV"
-#define NMEA_MSGID_RMC      "$GPRMC"
-#define NMEA_MSGID_VTG      "$GPVTG"
-#define NMEA_MSGID_PGT      "$PGTOP"
-
-#define NMEA_MSGID_LENGTH   6
-#define NMEA_MAX_SENTENCE   6
-
-class NmeaCache
+class Nmea
 {
     public:
-        NmeaCache();
-        String data[NMEA_MAX_SENTENCE + 1];
-        
+        Nmea(String, uint8_t, NmeaCache);
+        bool isValid();
+        bool parse();
+
     protected:
-        uint8_t msgIdToIndex(String);
+        uint16_t extractChecksum();
+        uint16_t calculateChecksum();
+        uint8_t parseHex(char c);
+        
+        int32_t getNextPosition(uint32_t);
+        bool getNextIsNull(uint32_t);
+        int32_t getNextUint32(uint32_t, uint32_t*);
+        int32_t getNextUint8(uint32_t, uint8_t*);
+        int32_t getNextFloat(uint32_t, float*);
+        int32_t getNextString(uint32_t, uint32_t, String*);
+
+        String _messageId;
+        uint8_t _dataIndex;
+        String _data;
 };
 #endif

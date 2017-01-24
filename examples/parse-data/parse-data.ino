@@ -1,4 +1,4 @@
-// Copyright © 2016 Daniel Porrey. All Rights Reserved.
+// Copyright © 2016-2017 Daniel Porrey. All Rights Reserved.
 //
 // This file is part of the Particle.GPS library.
 // 
@@ -16,7 +16,7 @@
 // along with Particle.GPS library. If not, 
 // see http://www.gnu.org/licenses/.
 //
-#include "Particle.GPS/Particle.GPS.h"
+#include "Particle-GPS.h"
 
 // ***
 // *** Create a Gps instance. The RX an TX pins are connected to
@@ -37,7 +37,7 @@ void setup()
   // ***
   // *** Initialize the USB Serial for debugging.
   // ***
-  Serial.begin(9600);
+  Serial.begin();
   Serial.println("Initializing...");
 
   // ***
