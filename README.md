@@ -7,6 +7,21 @@ GPS library for the Particle Electron and Photon. Current version is **v1.0.3**.
 ##About
 Instead of porting libraries written for other platforms, I wrote this library from scratch using the Particle firmware. This library allows you to easily add additional sentences or support to any serial based GPS.
 
+##NMEA Output Sentences
+This library will read the following NMEA sentences from the device into a buffer, but only supports parsing for the ones highlighted:
+
+- **PGTOP** (Status of antenna)
+- **GGA** (Time, position and fix type data)
+- GSA (GPS receiver operating mode, active satellites used in the
+position solution and DOP values.)
+- GSV (The number of GPS satellites in view satellite ID numbers,
+elevation, azimuth, and SNR values.)
+- **RMC** (Time, date, position, course and speed data. Recommended
+Minimum Navigation Information.)
+- VTG (Course and speed information relative to the ground.)
+
+More parsing will be added in later releases. If you wish to parse additional sentences, or you need to parse custom data, take a look at **Sentence.h** and **Sentence.cpp** to see how to implement an additional parser.
+
 ##Using the Library
 ###Create the Gps Instance
 Define a **Gps** object in your code and assign the appropriate serial port. In the example below, the serial pins on the **TX** and **RX** pins is used (**Serial1**).
