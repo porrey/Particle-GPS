@@ -1,0 +1,11 @@
+How to verify this library
+
+1. Connect a serial based GPS to the TX and RX pins. Connect the GPS RX to the TX pin and the GPS TX to the RX pin. See Adafruit product IDs 746, 3133, 1272 or 1059 or the Particle.io asset tracker GPS for compatible devices.
+
+2. Load the all-data.ino example firmware to the device.
+
+3. With the Photon or Electron connected to your PC via the USB cable/port, monitor the serial port from the Particle-CLI: particle serial monitor.
+
+4. Every second, the serial port will display six lines of unparsed data. Note that the data may be blank until the GPS obtains a fix. For best results, place the unit near an exterior window or use an external active/high-gain antenna (see Adafruit product IDs 851 and 960).
+
+NOTE: Use the URL http://adafru.it/[id] to view the Adafruit products above.
