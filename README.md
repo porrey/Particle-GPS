@@ -1,11 +1,11 @@
 # Particle-GPS
 
-GPS library for the Particle Electron and Photon. Current version is **v1.0.3**. 
+GPS library for the Particle Electron and Photon. Current version is **v1.0.4**. 
 
 > NOTE: that this library was renamed from **Particle.GPS** to **Particle-GPS** due to changes in the Particle library manager.
 
 ##About
-Instead of porting libraries written for other platforms, I wrote this library from scratch using the Particle firmware. This library allows you to easily add additional sentences or support to any serial based GPS.
+Instead of porting libraries written for other platforms, this library was written from scratch using the Particle firmware. This library allows you to easily add additional sentences or support to any serial based GPS.
 
 ##NMEA Output Sentences
 This library will read the following NMEA sentences from the device into a buffer, but only supports parsing for the ones highlighted:
