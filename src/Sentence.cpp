@@ -71,7 +71,7 @@ bool Gga::parse()
         // ***
         // *** Get the next field value (Latitude).
         // ***
-        index = this->getNextString(index, 9,  &this->latitude);
+        index = this->getNextString(index, 6,  &this->latitude);
         
         // ***
         // *** Get the next field value (North/South Indicator).
@@ -81,7 +81,7 @@ bool Gga::parse()
         // ***
         // *** Get the next field value (Longitude).
         // ***
-        index = this->getNextString(index, 10,  &this->longitude);
+        index = this->getNextString(index, 6,  &this->longitude);
         
         // ***
         // *** Get the next field value (East/West Indicator).
@@ -163,7 +163,7 @@ bool Rmc::parse()
         // ***
         // *** Get the next field value (Latitude).
         // ***
-        index = this->getNextString(index, 9,  &this->latitude);
+        index = this->getNextString(index, 6,  &this->latitude);
         
         // ***
         // *** Get the next field value (North/South Indicator).
@@ -173,7 +173,7 @@ bool Rmc::parse()
         // ***
         // *** Get the next field value (Longitude).
         // ***
-        index = this->getNextString(index, 10,  &this->longitude);
+        index = this->getNextString(index, 6,  &this->longitude);
         
         // ***
         // *** Get the next field value (East/West Indicator).
