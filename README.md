@@ -2,10 +2,10 @@
 
 GPS library for the Particle Electron and Photon. Current version is **v1.0.4**. 
 
-##About
+## About
 Instead of porting libraries written for other platforms, this library was written from scratch using the Particle firmware. This library allows you to easily add additional sentences or support to any serial based GPS.
 
-##NMEA Output Sentences
+## NMEA Output Sentences
 This library will read the following NMEA sentences from the device into a buffer, but only supports parsing for the ones highlighted:
 
 - **PGTOP** (Status of antenna)
@@ -20,14 +20,14 @@ Minimum Navigation Information.)
 
 More parsing will be added in later releases. If you wish to parse additional sentences, or you need to parse custom data, take a look at **Sentence.h** and **Sentence.cpp** to see how to implement an additional parser.
 
-##Using the Library
-###Create the Gps Instance
+## Using the Library
+### Create the Gps Instance
 Define a **Gps** object in your code and assign the appropriate serial port. In the example below, the serial pins on the **TX** and **RX** pins is used (**Serial1**).
 
     Gps _gps = Gps(&Serial1);
 
 
-###Create a Timer
+### Create a Timer
 In order to read the serial port fast enough, a Software Timer is used. The software timer i setup to fire every 1 ms and capture data coming in on the serial pins. The line of code below creates a software timer.
 
     Timer _timer = Timer(1, onSerialData);
@@ -39,7 +39,7 @@ In the callback function, simply call the **onSerialData()** method on the **Gps
     	_gps.onSerialData();
     }
 
-###Initialize the Objects
+### Initialize the Objects
 In the setup() method, call the begin method on the **Gps** object.
 
     _gps.begin(9600);
@@ -48,14 +48,14 @@ Also call the start() method of the timer.
 
     _timer.start();
 
-###Get the Data
+### Get the Data
 In the loop method, create an **Nmea** object for the specific data you want to read from the GPS. There are currently three NMEA sentences defined.
 
 1. Antenna Status ($PGTOP) => Pgtop
 2. Global Positioning System Fixed Data ($GPGGA) => Gga
 3. Recommended Minimum Navigation Information ($GPRMC) => Rmc4. 
 
-####Reading Antenna Status
+#### Reading Antenna Status
 First create the object passing the **Gps** instance in the constructor.
 
     Pgtop pgtop = Pgtop(_gps);
@@ -71,7 +71,7 @@ Next, parse the data and read the values if successful.
 	    Serial.println("");
     }
 
-####Global Positioning System Fixed Data
+#### Global Positioning System Fixed Data
 First create the object passing the **Gps** instance in the constructor.
 
     Gga gga = Gga(_gps);
@@ -96,7 +96,7 @@ Next, parse the data and read the values if successful.
 	    Serial.println("");
     }
 
-####Recommended Minimum Navigation Information
+#### Recommended Minimum Navigation Information
 First create the object passing the Gps instance in the constructor.
 
     Rmc rmc = Rmc(_gps);
@@ -120,7 +120,7 @@ Next, parse the data and read the values if successful.
 	    Serial.println("");
     }
 
-###Serial Port Debugging
+### Serial Port Debugging
 Note the sample lines of code above use the serial pins connected through the USB port to send data back to the computer. Make sure the following line of code is included in your setup().
 
     Serial.begin();
