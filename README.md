@@ -28,7 +28,7 @@ Define a **Gps** object in your code and assign the appropriate serial port. In 
 
 
 ### Create a Timer
-In order to read the serial port fast enough, a Software Timer is used. The software timer i setup to fire every 1 ms and capture data coming in on the serial pins. The line of code below creates a software timer.
+In order to read the serial port fast enough, a Software Timer is used. The software timer is setup to fire every 1 ms and capture data coming in on the serial pins. The line of code below creates a software timer.
 
     Timer _timer = Timer(1, onSerialData);
 
@@ -36,7 +36,7 @@ In the callback function, simply call the **onSerialData()** method on the **Gps
 
     void onSerialData()
     {
-    	_gps.onSerialData();
+      _gps.onSerialData();
     }
 
 ### Initialize the Objects
